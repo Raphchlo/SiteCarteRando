@@ -21,7 +21,7 @@ def test(soup):
     n = 0
     for link in soup.find_all('a'): ## pour chauqe balise <a> de la page 
         n+=1
-        print(str(n + "/1873" ))
+        print(str(n)+ "/1873" )
         href = "https://randogps.net" + link.get('href')[2:-1]  ## rajout du https au lien pour pouvoir l'ouvrr avec urllib
         href = href.replace(' ', '-')  ## on remplace les espaces par des tres pour éviter les bugs
         try :
@@ -62,7 +62,7 @@ def test(soup):
                        
                        # on ajoute e lien de téléchargement au fchier qui contendra tous les liens de téléchargement
                        fichier = open("lien_fichier_gpx.txt", "a")
-                       fichier.write(str(href3))
+                       fichier.write(str(href3)+'\n')
                        fichier.close()
     print(" -      ok      programme     terminé      -")
     return
