@@ -17,7 +17,10 @@
 }
 
 #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
-    height:100px;
+    height:50vh;
+    width: max(600px, calc(40vw + 1rem));
+    border: var(--white) 6px solid;
+    z-index: 0;
 }
 
 body{
@@ -53,13 +56,24 @@ body{
     flex-direction: row;
 }
 
+
+.boxmenuwrapp{
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+.boxmenuwrapp:hover{
+    padding: 0 3vw 0 3vw;
+    background-color: var(--flashy-green);
+}
+
 .boxmenuwrapp:has( + .boxmenuwrapp){
     margin-right: 2vw;
+    
 }
 
 .box-titre{
     background-color: var(--dark-green);
-    padding: 20vh 20vw 20vh 20vw;
+    padding: 5vh 20vw 20vh 20vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,3 +93,213 @@ h1{
 }
 
 
+main{
+    /* padding: 0 5vw 0 10vw; */
+}
+
+
+section{
+    padding: 0 5vw 0 10vw;
+}
+.sect-presentation{
+    padding-bottom: 5vh
+}
+
+.box-bg{
+    background-color: var(--dark-green);
+    position: absolute;
+    rotate: 30deg;
+    top: 75vh;
+    left: 40vw;
+    z-index: -1;
+}
+
+.box-bg1{
+    width: 10vw;
+    height: 120vh;
+}
+
+.box-bg2{
+    width: 2vw;
+    height: 120vh;
+    left : 56vw
+}
+
+.box-bg3{
+    width: 6vw;
+    height: 120vh;
+    left: 60vw
+}
+
+.main-box-presentation{
+    display: flex;
+    padding-top: 10vh;
+    flex-direction: row;
+}
+
+
+.caroussel{
+    width: 40vw;
+    overflow: hidden;
+    border: var(--light-gray) 10px solid;
+    height: 60vh;
+    display: grid;
+    place-content: center;
+}
+
+.car-img{
+    height: 60vh;
+    transition: 0.5s ease-in-out;
+
+}
+
+.car-img:hover{
+    scale: 1.2;
+
+}
+
+.description{
+    background-color: var(--dark-green);
+    padding: 2vw;
+    height: fit-content;
+    margin: 6vh 10vw 0 0 ;
+}
+
+.utilisation{
+    background-color: var(--dark-green);
+    padding: 2vw;
+    height: fit-content;
+    margin: 6vh 0 0 10vw ;
+}
+
+h2{
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--flashy-green);
+}
+
+.white-text{
+
+    color: var(--white);
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+}
+
+.sect-mapproxi{
+    background-color: var(--dark-green);
+    padding-top: 5vh  ;
+}
+
+.box-map-description{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5vh;
+}
+
+.descrp{
+    background-color: var(--light-green);
+    padding: 5vh 0 25vh 2vw;
+    margin-left:6vw;
+    width: 40vw;
+}
+
+.box-title{
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-self: end;
+    height: 10vh;
+    align-items:center ;
+}
+
+.icon-loc{
+    
+}
+
+.black-text{
+    color: var(--dark-green);
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-clamp: 50%;
+    text-align: center;
+    line-height: 1.4rem;
+    width: clamp(20vw, 4em, 35vw);
+    
+}
+
+.box-descrp{
+    margin-top: 3vh;
+}
+
+.text-descrp{
+    background-color: var(--dark-green);
+    padding: 0 0 0 1vw;
+    color: var(--flashy-green);
+    width: clamp(30vw,30vw, 60vw);
+    justify-self: end;
+}
+
+.text-descrp:has(+ .text-descrp){
+    margin-bottom: 3vh;
+}
+
+.button-carte{
+    background-color: var(--flashy-green);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 60vw;
+    position: absolute;
+    left : 20vw;
+    margin-top: 10vh;
+    z-index: 3;
+    height: 10vh;
+    align-items: center;
+}
+
+h3{
+    color: var(--white);
+    font-size: 1.4rem;
+}
+
+.main-box-carte{
+    margin-top: 5vh;
+}
+
+.box-map-button{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5vh;
+}
+
+.icon-download{
+    height: 8vh;
+}
+
+.up-button{
+    background-color: var(--flashy-green);
+    height: 55vh;
+    
+    
+}
+
+.button-download{
+    background-color: var(--light-gray);
+    display: grid;
+    place-content: center ;
+    height: 10vh;
+}
+.box-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 3vw;
+    width: 10vw;
+    height: 70vh;
+}
+
+#map-trajet{
+    width: 70vw;
+    height: 70vh;
+    border: var(--white) 6px solid;
+}
