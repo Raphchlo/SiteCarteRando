@@ -183,11 +183,16 @@ h2{
     color: var(--white);
     font-size: 1.2rem;
     line-height: 1.4rem;
+    text-align:center ;
+    cursor: pointer;
 }
 
+.white-text  span {
+    display: block;
+}
 .sect-mapproxi{
     background-color: var(--dark-green);
-    padding-top: 5vh  ;
+    padding-top: 5vh ;
 }
 
 .box-map-description{
@@ -212,9 +217,6 @@ h2{
     align-items:center ;
 }
 
-.icon-loc{
-    
-}
 
 .black-text{
     color: var(--dark-green);
@@ -255,6 +257,12 @@ h2{
     z-index: 3;
     height: 10vh;
     align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button-carte:hover{
+    scale: 0.9;
 }
 
 h3{
@@ -270,7 +278,10 @@ h3{
     display: flex;
     flex-direction: row;
     margin-top: 5vh;
+    
 }
+
+
 
 .icon-download{
     height: 8vh;
@@ -279,8 +290,16 @@ h3{
 .up-button{
     background-color: var(--flashy-green);
     height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: 0.2s;
     
-    
+}
+
+.up-button:hover{
+    scale: 0.9;
 }
 
 .button-download{
@@ -288,7 +307,14 @@ h3{
     display: grid;
     place-content: center ;
     height: 10vh;
+    cursor: pointer;
+    transition: 0.2s;
 }
+
+.button-download:hover{
+    scale: 0.9; 
+}
+
 .box-button{
     display: flex;
     flex-direction: column;
@@ -303,3 +329,29 @@ h3{
     height: 70vh;
     border: var(--white) 6px solid;
 }
+
+.icon-map{
+    width: 38px;
+}
+
+.sect-src{
+    background: linear-gradient(to bottom , var(--dark-green) 50%, var(--light-green) 50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60vh
+
+}
+
+.sources{
+    margin-left: 30vw;
+    list-style-type: disc;
+    
+}
+
+a{
+    text-decoration: none;
+    color: var(--flashy-green);
+    font-size: 1.4rem;
+}
+
