@@ -8,7 +8,6 @@ parser.to_csv(fbuf)
 
 test_results = fbuf.getvalue()
 
-for ligne in test_results :
-        print(ligne)
+print(test_results)
         
         
