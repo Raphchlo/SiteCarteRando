@@ -1,9 +1,6 @@
-var lat = 48.852969;
-var lon = 2.349903;
-var macarte = null;
-var macarte2 = null;
+
 // Fonction d'initialisation de la carte
-function initMap() {
+function initMap(lat, lon,macarte) {
     // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
     macarte = L.map('map').setView([lat, lon], 11);
     // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
@@ -14,7 +11,7 @@ function initMap() {
         maxZoom: 20
     }).addTo(macarte);
 }
-function initMapTrajet() {
+function initMapTrajet(lat, lon,macarte2) {
     // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
     macarte2 = L.map('map-trajet').setView([lat, lon], 11);
     // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
@@ -26,7 +23,35 @@ function initMapTrajet() {
     }).addTo(macarte2);
 }
 window.onload = function(){
-// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
-initMap(); 
-initMapTrajet();
+    const succes = (position) =>{
+        const {latitude, longitude}=position.coords;
+        var lat = latitude;
+        var lon = longitude;
+        var macarte = null;
+        var macarte2 = null;
+        initMap(lat,lon,macarte); 
+        initMapTrajet(lat,lon,macarte2);
+    };
+    
+    const error = (error) =>{
+        console.warn(error.message);
+    };
+    
+    // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+    navigator.geolocation.getCurrentPosition(succes,error);
+    fetch('api.php')
+        .then(response => response.json())
+        .then(data => {
+    console.log(data); // Tu peux afficher ça ou l'injecter dans le HTML
+
+  })
+  .catch(error => console.error('Erreur :', error));
+    
 };
+
+
+
+// localisation
+
+
+
