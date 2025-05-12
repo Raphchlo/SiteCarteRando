@@ -36,6 +36,7 @@ for lien in fichier_lien :
     print(coordonée)
     if coordonée != () :
         dico[num].append(coordonée)
+        dico[num].append(lien)
     else :
         del dico[num]
 
@@ -55,7 +56,6 @@ for ligne in fichier :
             dico[cleact].append(donnée[1])
         elif (n-11306)%5==0 and cleact in dico.keys():
             dico[cleact].append(donnée[1])
-        elif (n-11307)%5==0 and cleact in dico.keys():
-            dico[cleact].append(donnée[1])
+        
     n+=1
  #~~~~~~~~~~~~~~~~ajout des coordonnées dans le dico   
