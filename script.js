@@ -21,7 +21,7 @@ function initMap(lat, lon,macarte) {
         const locRando = listeRando[i]["randonnee_localisation"].split(";");
         const longRando = parseFloat(locRando[1]);
         const latRando = parseFloat(locRando[0]);
-        let marker1 = L.marker([latRando, longRando]).addTo(macarte);
+        let marker1 = L.marker([latRando, longRando]).addTo(macarte).bindPopup(listeRando[i]["randonnee_nom"]);
 
         
     }
