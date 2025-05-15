@@ -1,4 +1,5 @@
-
+let time = 2 ;
+let distance = 3 ;
 let donnee = null;
 let longUser = null;
 let latUser = null;
@@ -119,6 +120,7 @@ async function init(){
         const response = await fetch('api.php');
         data = await response.json();
         console.log(data);
+        
 
         getproxi();
         let macarte = null;
@@ -151,7 +153,12 @@ function getproxi(){  // renvoie une liste avec les rando à moins de 10km de la
         const longRando = locRando[1];
         const latRando = locRando[0];
         const distMax = 10;
-        if ((longToKm(longRando,latRando)-longToKm(longUser,latUser))**2 + (latToKm(latRando)-latToKm(latUser))**2 <= distMax**2){ // calcul de distance : n  = dist max
+        let time2 = data[i]["randonnee_duree"].split(" ");
+            time2 = time2[0].split(":").join(".");
+        let distance_rando = data[i]["randonnee_distance"].split(" ");
+            distance_rando = distance_rando[0]
+        
+        if ((longToKm(longRando,latRando)-longToKm(longUser,latUser))**2 + (latToKm(latRando)-latToKm(latUser))**2 <= distMax**2 &&  time2<=time && distance_rando<=distance){ // calcul de distance : n  = dist max
             listeRando.push(data[i])
         }
     }
