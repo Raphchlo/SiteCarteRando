@@ -21,11 +21,14 @@ function initMap(lat, lon,macarte) {
         const locRando = listeRando[i]["randonnee_localisation"].split(";");
         const longRando = parseFloat(locRando[1]);
         const latRando = parseFloat(locRando[0]);
-        let marker1 = L.marker([latRando, longRando]).addTo(macarte).bindPopup(listeRando[i]["randonnee_nom"]);
+        let marker1 = L.marker([latRando, longRando]).on('click', onClick(latRando,lonRando,listeRando[i]['randonnee_id'])).addTo(macarte).bindPopup(listeRando[i]["randonnee_nom"]);
 
         
     }
 
+}
+function onclick(lat,lon,i){
+    initMapTrajet(lat, lon,macarte2)
 }
 // function initMapTrajet(lat, lon,macarte2) {
 //     // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
